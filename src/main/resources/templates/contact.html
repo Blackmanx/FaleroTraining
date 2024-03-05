@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Falero Training</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="main.css" rel="stylesheet" />
+	<script src="js/tailwindcdn.js"></script>
+</head>
+<body>
+
+			<div id="page-content" class="w-full h-screen">
+				<div class="title flex justify-center items-center content-center mx-auto dark:bg-gray-700">
+						<h1
+							class="text-center text-4xl font-extrabold leading-none tracking-tight dark:bg text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+							Bienvenido a la Clinica Falero</h1>
+				</div>
+					<!-- Table -->
+				<table class="text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 mx-auto my-16">
+					<thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+						<tr>
+							<th scope="col" class="px-6 py-3">
+								Tipo
+							</th>
+							<th colspan="2" scope="col" class="px-6 py-3 text-right">
+								Repeticiones
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+							<th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+								Pecho
+							</th>
+							<td colspan="1" class="px-6 py-4 text-right">
+								5
+							</td>
+						</tr>
+						<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+							<th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+								Piernas
+							</th>
+							<td colspan="2" class="px-6 py-4 text-right">
+								8
+							</td>
+						</tr>
+						<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+							<th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+								Espalda
+							</th>
+							<td colspan="2" class="px-6 py-4 text-right">
+								5
+							</td>
+						</tr>
+						<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+							<th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+								Triceps
+							</th>
+							<td colspan="2" class="px-6 py-4 text-right">
+								10
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<hr class="bg-transparent h-0 invisible">
+
+					<div class="mx-auto my-16 w-11/12">
+						<h2 class="text-center mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-4xl lg:text-5xl">¿Necesitas un poco de <span class="text-transparent bg-clip-text bg-gradient-to-r to-orange-600 from-yellow-500">ritmo</span> para tu rutina?</h1>
+						<p class="text-center text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">Permitenos prestarte ayuda con eso...</p>
+					</div>
+
+
+					<!-- Card Component -->
+				<div class="mx-auto w-11/12 my-16">
+					<div class="h-2 bg-red-light"></div>
+					<div class="flex items-center justify-center h-5/6 bg-red-lightest">
+						<div class="bg-white shadow-lg rounded-lg" style="width: 45rem !important;">
+							<div class="flex">
+								<div>
+									<img class="w-96 h-48 rounded hidden md:block" src="https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/1f/4e/3f/1f4e3fa7-5c64-a36d-164b-6173898d4b8e/5063212311741_cover.jpg/1200x1200bf-60.jpg" alt="Album Pic">
+								</div>
+								<div class="w-full p-8">
+									<div class="flex justify-between">
+										<div>
+											<h3 class="text-2xl text-grey-darkest font-medium">Playa del Ingles</h3>
+											<p class="text-sm text-grey mt-1">Aaron Naranjo</p>
+										</div>
+										<div class="text-red-lighter">
+											<svg class="w-6 h-6" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 3.22l-.61-.6a5.5 5.5 0 0 0-7.78 7.77L10 18.78l8.39-8.4a5.5 5.5 0 0 0-7.78-7.77l-.61.61z"/></svg>
+										</div>
+									</div>
+									<div class="flex justify-between items-center mt-8">
+										<div onclick="Alert('qeloke bro te habla mitel vi asi mimo mitel vi te llamo para infolmalte de que tu ere uno de lo ganadore de lo diemil dolal asi e bro de lo diemil dolal te llamo para dalte sielto requisito y para felisitalte te felisito apunta ete numero pa que no ponga una recarga de dosiento oye ocho veintinueve tre pal de frito un ala y un mulito apunta ese numero para una recalga de dosiento ')" class="text-grey-darker">
+											<svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M6.59 12.83L4.4 15c-.58.58-1.59 1-2.4 1H0v-2h2c.29 0 .8-.2 1-.41l2.17-2.18 1.42 1.42zM16 4V1l4 4-4 4V6h-2c-.29 0-.8.2-1 .41l-2.17 2.18L9.4 7.17 11.6 5c.58-.58 1.59-1 2.41-1h2zm0 10v-3l4 4-4 4v-3h-2c-.82 0-1.83-.42-2.41-1l-8.6-8.59C2.8 6.21 2.3 6 2 6H0V4h2c.82 0 1.83.42 2.41 1l8.6 8.59c.2.2.7.41.99.41h2z"/></svg>
+										</div>
+										<div class="text-grey-darker">
+											<svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M4 5h3v10H4V5zm12 0v10l-9-5 9-5z"/></svg>
+										</div>
+										<div class="text-grey-darker p-8 rounded-full bg-red-light shadow-lg">
+											<a href="https://www.youtube.com/watch?v=J9WThuX7QjY" target="_blank"><svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M5 4h3v12H5V4zm7 0h3v12h-3V4z"/></svg></a>
+										</div>
+										<div class="text-grey-darker">
+											<svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 5h3v10h-3V5zM4 5l9 5-9 5V5z"/></svg>
+										</div>
+										<div class="text-grey-darker">
+											<svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M5 4a2 2 0 0 0-2 2v6H0l4 4 4-4H5V6h7l2-2H5zm10 4h-3l4-4 4 4h-3v6a2 2 0 0 1-2 2H6l2-2h7V8z"/></svg>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="mx-8 py-4">
+								<div class="flex justify-between text-sm text-grey-darker">
+									<p>0:00</p>
+									<p>2:55</p>
+								</div>
+								<div class="mt-1">
+									<div class="h-1 bg-grey-dark rounded-full">
+										<div class="w-1/5 h-1 bg-red-light rounded-full relative">
+											<span class="w-4 h-4 bg-red absolute pin-r pin-b -mb-1 rounded-full shadow"></span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<hr class="bg-transparent my-16 h-0 invisible">
+
+			<script src="js/script.js"></script>
+</body>
+</html>

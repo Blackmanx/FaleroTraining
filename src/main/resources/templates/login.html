@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Falero Training</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="main.css" rel="stylesheet" />
+	<script src="js/tailwindcdn.js"></script>
+</head>
+<body>
+	<header>
+		<nav
+			class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+			<div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+				<a href="https://clinicafalero.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+					<img src="images/logo.png" class="h-8" alt="Clinica Falero Logo">
+					<span class="self-center font-semibold whitespace-nowrap dark:text-white">Clinica Falero</span>
+				</a>
+				<div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+
+					<a href="login.html"><button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" type="button"
+						class="text-white bg-orange-600 hover:bg-orange-700 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-orange-500 dark:hover:bg-orange-700 dark:focus:ring-orange-400">Log
+						In</button></a>
+
+					<button data-collapse-toggle="navbar-sticky" type="button"
+						class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+						aria-controls="navbar-sticky" aria-expanded="false">
+						<span class="sr-only">Abrir menu principal</span>
+						<svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+							viewBox="0 0 17 14">
+							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								d="M1 1h15M1 7h15M1 13h15" />
+						</svg>
+					</button>
+				</div>
+				<div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+					<ul
+						class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+						<li>
+							<a th:href="@{/}"
+								class="block py-2 px-3 bg-gray-100 text-gray-900 rounded md:bg-transparent md:text-orange-600 md:p-0 md:dark:text-orange-500">Inicio</a>
+						</li>
+						<li>
+							<a th:href=@{/services.html} class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange-600 md:p-0 md:dark:hover:text-orange-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" aria-current="page">Servicios</a>
+				</li>
+				<a href=" #" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:2bg-transparent md:hover:text-orange-600 md:p-0 md:dark:hover:text-orange-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Tarifas</a>
+						</li>
+						<li>
+							<a href="#"
+								class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange-600 md:p-0 md:dark:hover:text-orange-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contacto</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<!-- LOGIN -->
+
+	<div class="font-[sans-serif] text-[#333]">
+		<div class="min-h-screen flex fle-col items-center justify-center py-6 px-4">
+		  <div class="grid md:grid-cols-2 items-center gap-10 max-w-6xl w-full">
+			<div class="max-md:text-center">
+			  <h2 class="lg:text-5xl text-4xl font-extrabold lg:leading-[55px]">
+				Accede a nuestros servicios de Entrenamiento Personal
+			  </h2>
+			  <p class="text-sm mt-6">Inmersate </p>
+			  <p class="text-sm mt-10">¿No tienes cuenta? <a href="javascript:void(0);" class="text-orange-600 font-semibold hover:underline ml-1">Registrate aquí</a></p>
+			</div>
+			<form class="space-y-6 max-w-md md:ml-auto max-md:mx-auto w-full" action="action_page.php" method="post">
+			  <h3 class="text-3xl font-extrabold mb-8 max-md:text-center">
+				Sign in
+			  </h3>
+			  <div>
+				<input name="email" type="email" autocomplete="email" required class="bg-gray-100 w-full text-sm px-4 py-3.5 rounded-md outline-orange-500" placeholder="Email address" />
+			  </div>
+			  <div>
+				<input name="password" type="password" autocomplete="current-password" required class="bg-gray-100 w-full text-sm px-4 py-3.5 rounded-md outline-orange-500" placeholder="Password" />
+			  </div>
+			  <div class="flex items-center justify-between">
+				<div class="flex items-center">
+				  <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 text-orange-500 focus:ring-orange-500 border-gray-300 rounded" />
+				  <label for="remember-me" class="ml-3 block text-sm">
+					Remember me
+				  </label>
+				</div>
+				<div class="text-sm">
+				  <a href="javascript:void(0);" class="text-orange-500 hover:text-orange-400">
+					Forgot your password?
+				  </a>
+				</div>
+			  </div>
+			  <div class="!mt-10">
+				<button type="submit" class="w-full shadow-xl py-2.5 px-4 text-sm font-semibold rounded text-white bg-orange-500 hover:bg-orange-600 focus:outline-none">
+				  Log in
+				</button>
+			  </div>
+			  <p class="my-10 text-sm text-gray-400 text-center">or continue with</p>
+			  <div class="space-x-6 flex justify-center">
+				<button type="button"
+				  class="border-none outline-none">
+				  <svg xmlns="http://www.w3.org/2000/svg" width="30px" class="inline" viewBox="0 0 512 512">
+					<path fill="#fbbd00"
+					  d="M120 256c0-25.367 6.989-49.13 19.131-69.477v-86.308H52.823C18.568 144.703 0 198.922 0 256s18.568 111.297 52.823 155.785h86.308v-86.308C126.989 305.13 120 281.367 120 256z"
+					  data-original="#fbbd00" />
+					<path fill="#0f9d58"
+					  d="m256 392-60 60 60 60c57.079 0 111.297-18.568 155.785-52.823v-86.216h-86.216C305.044 385.147 281.181 392 256 392z"
+					  data-original="#0f9d58" />
+					<path fill="#31aa52"
+					  d="m139.131 325.477-86.308 86.308a260.085 260.085 0 0 0 22.158 25.235C123.333 485.371 187.62 512 256 512V392c-49.624 0-93.117-26.72-116.869-66.523z"
+					  data-original="#31aa52" />
+					<path fill="#3c79e6"
+					  d="M512 256a258.24 258.24 0 0 0-4.192-46.377l-2.251-12.299H256v120h121.452a135.385 135.385 0 0 1-51.884 55.638l86.216 86.216a260.085 260.085 0 0 0 25.235-22.158C485.371 388.667 512 324.38 512 256z"
+					  data-original="#3c79e6" />
+					<path fill="#cf2d48"
+					  d="m352.167 159.833 10.606 10.606 84.853-84.852-10.606-10.606C388.668 26.629 324.381 0 256 0l-60 60 60 60c36.326 0 70.479 14.146 96.167 39.833z"
+					  data-original="#cf2d48" />
+					<path fill="#eb4132"
+					  d="M256 120V0C187.62 0 123.333 26.629 74.98 74.98a259.849 259.849 0 0 0-22.158 25.235l86.308 86.308C162.883 146.72 206.376 120 256 120z"
+					  data-original="#eb4132" />
+				  </svg>
+				</button>
+				<button type="button"
+				  class="border-none outline-none">
+				  <svg xmlns="http://www.w3.org/2000/svg" width="30px" fill="#000" viewBox="0 0 22.773 22.773">
+					<path d="M15.769 0h.162c.13 1.606-.483 2.806-1.228 3.675-.731.863-1.732 1.7-3.351 1.573-.108-1.583.506-2.694 1.25-3.561C13.292.879 14.557.16 15.769 0zm4.901 16.716v.045c-.455 1.378-1.104 2.559-1.896 3.655-.723.995-1.609 2.334-3.191 2.334-1.367 0-2.275-.879-3.676-.903-1.482-.024-2.297.735-3.652.926h-.462c-.995-.144-1.798-.932-2.383-1.642-1.725-2.098-3.058-4.808-3.306-8.276v-1.019c.105-2.482 1.311-4.5 2.914-5.478.846-.52 2.009-.963 3.304-.765.555.086 1.122.276 1.619.464.471.181 1.06.502 1.618.485.378-.011.754-.208 1.135-.347 1.116-.403 2.21-.865 3.652-.648 1.733.262 2.963 1.032 3.723 2.22-1.466.933-2.625 2.339-2.427 4.74.176 2.181 1.444 3.457 3.028 4.209z" data-original="#000000"></path>
+				  </svg>
+				</button>
+				<button type="button"
+				  class="border-none outline-none">
+				  <svg xmlns="http://www.w3.org/2000/svg" width="30px" fill="#007bff" viewBox="0 0 167.657 167.657">
+					<path d="M83.829.349C37.532.349 0 37.881 0 84.178c0 41.523 30.222 75.911 69.848 82.57v-65.081H49.626v-23.42h20.222V60.978c0-20.037 12.238-30.956 30.115-30.956 8.562 0 15.92.638 18.056.919v20.944l-12.399.006c-9.72 0-11.594 4.618-11.594 11.397v14.947h23.193l-3.025 23.42H94.026v65.653c41.476-5.048 73.631-40.312 73.631-83.154 0-46.273-37.532-83.805-83.828-83.805z" data-original="#010002"></path>
+				  </svg>
+				</button>
+			  </div>
+			</form>
+		  </div>
+		</div>
+	  </div>
+
+	<footer class="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-600">
+		<div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+			<div class="md:flex md:justify-between text-center">
+			<div class="mx-auto sm:mx-0 mb-6 md:mb-0">
+				<a href="https://clinicafalero.com/" class="flex justify-center md:justify-between items-center">
+					<img src="./images/logo.png" class="h-8 me-3" alt="Clinica Falero Logo" />
+					<span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Clinica Falero</span>
+				</a>
+			</div>
+			<div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+				<div>
+					<h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Contacto</h2>
+					<ul class="text-gray-500 dark:text-gray-400 font-medium">
+						<li class="mb-4">
+							<a href="https://www.instagram.com" class="hover:underline ">Instagram</a>
+						</li>
+						<li>
+							<a href="https://www.facebook.com" class="hover:underline">Facebook</a>
+						</li>
+					</ul>
+				</div>
+				<div>
+					<h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
+					<ul class="text-gray-500 dark:text-gray-400 font-medium">
+						<li class="mb-4">
+							<a href="#" class="hover:underline">Privacy Policy</a>
+						</li>
+						<li>
+							<a href="#" class="hover:underline">Terms &amp; Conditions</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+		<div class="text-center sm:text-left justify-center sm:flex sm:items-center sm:justify-between">
+			<span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="https://clinicafalero.com/" class="hover:underline">Clinica Falero</a>
+			</span>
+			<div class="flex mt-4 text-center justify-center sm:justify-between items-center sm:mt-0">
+				<a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+					<svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
+							<path fill-rule="evenodd" d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z" clip-rule="evenodd"/>
+						</svg>
+					<span class="sr-only">Facebook page</span>
+				</a>
+				<a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+					<svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+						<path fill-rule="evenodd" d="M10 0a10 10 0 1 0 10 10A10.009 10.009 0 0 0 10 0Zm6.613 4.614a8.523 8.523 0 0 1 1.93 5.32 20.094 20.094 0 0 0-5.949-.274c-.059-.149-.122-.292-.184-.441a23.879 23.879 0 0 0-.566-1.239 11.41 11.41 0 0 0 4.769-3.366ZM8 1.707a8.821 8.821 0 0 1 2-.238 8.5 8.5 0 0 1 5.664 2.152 9.608 9.608 0 0 1-4.476 3.087A45.758 45.758 0 0 0 8 1.707ZM1.642 8.262a8.57 8.57 0 0 1 4.73-5.981A53.998 53.998 0 0 1 9.54 7.222a32.078 32.078 0 0 1-7.9 1.04h.002Zm2.01 7.46a8.51 8.51 0 0 1-2.2-5.707v-.262a31.64 31.64 0 0 0 8.777-1.219c.243.477.477.964.692 1.449-.114.032-.227.067-.336.1a13.569 13.569 0 0 0-6.942 5.636l.009.003ZM10 18.556a8.508 8.508 0 0 1-5.243-1.8 11.717 11.717 0 0 1 6.7-5.332.509.509 0 0 1 .055-.02 35.65 35.65 0 0 1 1.819 6.476 8.476 8.476 0 0 1-3.331.676Zm4.772-1.462A37.232 37.232 0 0 0 13.113 11a12.513 12.513 0 0 1 5.321.364 8.56 8.56 0 0 1-3.66 5.73h-.002Z" clip-rule="evenodd"/>
+					</svg>
+					<span class="sr-only">Dribbble account</span>
+				</a>
+			</div>
+		</div>
+		</div>
+	</footer>
+</body>
+</html>
