@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+	margin-bottom: auto !important;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	background-image:url(../images/background.jpg);
+	background-size: cover;
+	}
+
+	footer {
+		margin-top: auto !important;
+	}
+
+	.title {
+		margin-top: auto;
+	}
+
+	.my-header {
+		@apply text-2xl my-4 mx-4
+	}
+
+	.login-form {
+		margin-top: 20vh;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		body {
+			background-color: rgb(55 65 81);
+		}
+	}
+
+	@media (max-width: 860px) {
+
+		.login-form {
+			display: block;
+			width: 90%;
+			height: 90%;
+		}
+	}
