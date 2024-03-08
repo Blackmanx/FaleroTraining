@@ -58,7 +58,7 @@ public class MainController {
         return "signup";
     }
 
-     @PostMapping("/register/save")
+    @PostMapping("/register/save")
     public String registration(@Valid @ModelAttribute("user") UserDto userDto,
                                BindingResult result,
                                Model model){
@@ -76,6 +76,26 @@ public class MainController {
 
         userService.saveUser(userDto);
         return "redirect:/register?success";
+    }
+
+    @PostMapping("/login/user")
+    public String loginUser(@Valid @ModelAttribute("user") UserDto userDto,
+    BindingResult result,
+    Model model){
+        User existingUser = userService.findUserByEmail(userDto.getEmail());
+
+        if(existingUser != null && existingUser.getEmail() != null && existingUser.getPassword() != userDto.getPassword()){
+            result.rejectValue("email", null,
+                    "Details incorrect");
+        }
+
+        if(result.hasErrors()){
+            model.addAttribute("user", userDto);
+            return "redirect:/login?error";
+        }
+
+
+        return "redirect:/users/?success";
     }
 
     // handler method to handle list of users

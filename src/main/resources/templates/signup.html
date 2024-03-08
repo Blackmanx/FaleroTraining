@@ -1,70 +1,135 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
+  <head>
     <title>Registro de Usuario</title>
     <link th:href="@{main.css}" rel="stylesheet" />
-</head>
-<body class="flex justify-center items-center min-h-screen bg-gray-100">
-    <div class="w-full md:w-3/4 lg:max-w-lg p-8 space-y-4 bg-white shadow-lg rounded-lg mx-auto">
-		<h2 class="text-4xl font-extrabold dark:text-white">Formulario</h2>
-		<div th:if="${param.success}">
-			<div class="alert alert-info">
-			  You have successfully registered our app!
-			</div>
-		</div>
-        <form th:action="@{/register/save}"
-        th:object="${user}" method="post" class="space-y-4">
-            <div>
-                <label for="firstName" class="block">Nombre</label>
-                <input type="text" id="firstName" th:field="*{firstName}" class="w-full px-4 py-2 border rounded-md" required>
-            </div>
+  </head>
+  <body class="flex justify-center items-center min-h-screen bg-gray-100">
+    <div
+      class="w-full md:w-3/4 lg:max-w-lg p-8 space-y-4 bg-white shadow-lg rounded-lg mx-auto"
+    >
+      <h2 class="text-4xl font-extrabold dark:text-white">Formulario</h2>
+      <div th:if="${param.success}">
+        <div class="alert alert-info">
+          You have successfully registered our app!
+        </div>
+      </div>
+      <form
+        th:action="@{/register/save}"
+        th:object="${user}"
+        method="post"
+        class="space-y-4"
+      >
+        <div>
+          <label for="firstName" class="block">Nombre</label>
+          <input
+            type="text"
+            id="firstName"
+            th:field="*{firstName}"
+            class="w-full px-4 py-2 border rounded-md"
+            required
+          />
+        </div>
 
-            <div>
-                <label for="lastName" class="block">Apellidos</label>
-                <input type="text" id="lastName" th:field="*{lastName}" class="w-full px-4 py-2 border rounded-md">
-            </div>
+        <div>
+          <label for="lastName" class="block">Apellidos</label>
+          <input
+            type="text"
+            id="lastName"
+            th:field="*{lastName}"
+            class="w-full px-4 py-2 border rounded-md"
+          />
+        </div>
 
-            <div>
-                <label for="email" class="block">Email</label>
-                <input type="email" id="email" th:field="*{email}" class="w-full px-4 py-2 border rounded-md" required>
-            </div>
+        <div>
+          <label for="email" class="block">Email</label>
+          <input
+            type="email"
+            id="email"
+            th:field="*{email}"
+            class="w-full px-4 py-2 border rounded-md"
+            required
+          />
+        </div>
 
-            <div>
-                <label for="gender" class="block">Sexo</label>
-                <select id="gender" th:field="*{gender}" class="w-full px-4 py-2 border rounded-md" required>
-                    <option value="Masculino">Masculino</option>
-                    <option value="Femenino">Femenino</option>
-                    <option value="Otro">Otro</option>
-                </select>
-            </div>
+        <div>
+          <label for="gender" class="block">Sexo</label>
+          <select
+            id="gender"
+            th:field="*{gender}"
+            class="w-full px-4 py-2 border rounded-md"
+            required
+          >
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+            <option value="Otro">Otro</option>
+          </select>
+        </div>
 
-            <div>
-                <label for="password" class="block">Contraseña</label>
-                <input type="password" id="password" th:field="*{password}" class="w-full px-4 py-2 border rounded-md" required>
-            </div>
+        <div>
+          <label for="password" class="block">Contraseña</label>
+          <input
+            type="password"
+            id="password"
+            th:field="*{password}"
+            class="w-full px-4 py-2 border rounded-md"
+            required
+          />
+        </div>
 
-            <div>
-                <label for="idCard" class="block">DNI</label>
-                <input type="text" id="idCard" th:field="*{idCard}" class="w-full px-4 py-2 border rounded-md" required>
-            </div>
+        <div>
+          <label for="idCard" class="block">DNI</label>
+          <input
+            type="text"
+            id="idCard"
+            th:field="*{idCard}"
+            class="w-full px-4 py-2 border rounded-md"
+            required
+          />
+        </div>
 
-            <div>
-                <label for="dateOfBirth" class="block">Fecha de Nacimiento</label>
-                <input type="date" id="dateOfBirth" th:field="*{dateOfBirth}" class="w-full px-4 py-2 border rounded-md" required>
-            </div>
+        <div>
+          <label for="dateOfBirth" class="block">Fecha de Nacimiento</label>
+          <input
+            type="date"
+            id="dateOfBirth"
+            th:field="*{dateOfBirth}"
+            class="w-full px-4 py-2 border rounded-md"
+            required
+          />
+        </div>
 
-            <div>
-                <label class="block">Roles</label>
-                <div>
-                    <label><input type="checkbox" th:field="*{roles}" name="roles" value="ROLE_ADMIN"> Administrador</label>
-                </div>
-                <div>
-                    <label><input type="checkbox" th:field="*{roles}" name="roles" value="ROLE_USER"> Usuario</label>
-                </div>
-            </div>
+        <div>
+          <label class="block">Roles</label>
+          <div>
+            <label
+              ><input
+                type="checkbox"
+                name="roles"
+                value="ROLE_ADMIN"
+              />
+              Administrador</label
+            >
+          </div>
+          <div>
+            <label
+              ><input
+                type="checkbox"
+                name="roles"
+                value="ROLE_USER"
+              />
+              Usuario</label
+            >
+          </div>
+        </div>
 
-            <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">Enviar</button>
-        </form>
+        <button
+          type="submit"
+          class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+        >
+          Enviar
+        </button>
+      </form>
     </div>
-</body>
+  </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <title>Falero Training</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link href="main.css" rel="stylesheet" />
+    <link th:href="@{main.css}" rel="stylesheet" />
 </head>
 <body>
 	<header>
@@ -65,16 +65,40 @@
 			  <p class="text-sm mt-6">Inmersate en un entrenamiento exclusivo desarrollado para tí con tu propio seguimiento. </p>
 			  <p class="text-sm mt-10">¿No tienes cuenta? <a th:href="@{/register}" class="text-orange-600 font-semibold hover:underline ml-1">Registrate aquí</a></p>
 			</div>
-			<form class="space-y-6 max-w-md md:ml-auto max-md:mx-auto w-full" th-action="@{/signin}" method="post">
+			<form class="space-y-6 max-w-md md:ml-auto max-md:mx-auto w-full" th:action="@{/login/user}"
+			th:object="${user}" method="post">
 			  <h3 class="text-3xl font-extrabold mb-8 max-md:text-center">
 				Sign in
 			  </h3>
 			  <div class="dark:bg-gray-800">
-				<input type="email" id="email" required class="bg-gray-100 dark:bg-gray-800 w-full text-sm px-4 py-3.5 rounded-md  outline-orange-500" placeholder="Email address" />
-			  </div><!--th:field="*{email}"-->
+				<input  type="email" id="email"
+			 required class="bg-gray-100 dark:bg-gray-800 w-full text-sm px-4 py-3.5 rounded-md  outline-orange-500" placeholder="Email address" />
+			  </div>
 			  <div class="dark:bg-gray-800">
-				<input type="password" id="password" autocomplete="current-password" required class="bg-gray-100 dark:bg-gray-800 w-full text-sm px-4 py-3.5 rounded-md outline-orange-500" placeholder="Password" />
-			  </div><!--th:field="*{password}"-->
+				<input type="password" id="password"
+                                    autocomplete="current-password" required class="bg-gray-100 dark:bg-gray-800 w-full text-sm px-4 py-3.5 rounded-md outline-orange-500" placeholder="Password" />
+			  </div>
+			  <div th:if="${param.error}">
+				<div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+					<strong class="font-bold">Error!</strong>
+					<span class="block sm:inline">Datos incorrectos</span>
+				  </div>
+			  </div>
+			  <div th:if="${param.success}">
+			  <div class="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md" role="alert">
+				<div class="flex">
+				  <div>
+					<p class="font-bold">Datos correctos</p>
+					</div>
+					</div>
+					<div class="!mt-10">
+						<a th:href="@{/users}"></a><button class="w-3/4 shadow-xl py-2.5 px-4 text-sm font-semibold rounded text-black bg-green-500 hover:bg-green-600 focus:outline-none">
+						  Control Panel
+						</button></a>
+					  </div>
+				</div>
+
+				</div>
 			  <div class="flex items-center justify-between">
 				<div class="flex items-center">
 				  <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 text-orange-500 focus:ring-orange-500 border-gray-300 rounded" />

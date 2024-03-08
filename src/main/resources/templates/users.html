@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Registration and Login System</title>
 	<link rel="stylesheet" th:href="@{main.css}">
+	<script defer th:src="@{script.js}"></script>
 </head>
 <body class="bg-gray-800 text-white">
 <nav class="bg-gray-900 p-4">
@@ -17,11 +18,11 @@
 <div class="container mx-auto my-8">
     <div class="mb-4">
         <h2 class="text-2xl font-semibold">Lista de usuarios registrados</h2>
+		<input type="text" id="filterInput" onkeyup="filterTable()" placeholder="Buscar por cualquier texto..." class="bg-gray-700 text-white mt-2 mb-4 px-3 py-2 rounded focus:outline-none focus:shadow-outline w-full">
     </div>
-    <table class="table-auto w-full">
+    <table id="usersTable" class="table-auto w-full">
         <thead class="bg-gray-700">
             <tr>
-				<th class="px-4 py-2">ID</th>
                 <th class="px-4 py-2">Nombre</th>
                 <th class="px-4 py-2">Last Name</th>
                 <th class="px-4 py-2">Email</th>
@@ -33,7 +34,6 @@
         </thead>
         <tbody class="bg-gray-800">
             <tr th:each="user : ${users}">
-				<td class="border px-4 py-2" th:text="${user.id}"></td>
                 <td class="border px-4 py-2" th:text="${user.firstName}"></td>
                 <td class="border px-4 py-2" th:text="${user.lastName}"></td>
                 <td class="border px-4 py-2" th:text="${user.email}"></td>
