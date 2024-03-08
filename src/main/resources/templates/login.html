@@ -62,19 +62,19 @@
 			  <h2 class="lg:text-5xl text-4xl font-extrabold lg:leading-[55px]">
 				Accede a nuestros servicios de Entrenamiento Personal
 			  </h2>
-			  <p class="text-sm mt-6">Inmersate </p>
-			  <p class="text-sm mt-10">¿No tienes cuenta? <a href="javascript:void(0);" class="text-orange-600 font-semibold hover:underline ml-1">Registrate aquí</a></p>
+			  <p class="text-sm mt-6">Inmersate en un entrenamiento exclusivo desarrollado para tí con tu propio seguimiento. </p>
+			  <p class="text-sm mt-10">¿No tienes cuenta? <a th:href="@{/register}" class="text-orange-600 font-semibold hover:underline ml-1">Registrate aquí</a></p>
 			</div>
-			<form class="space-y-6 max-w-md md:ml-auto max-md:mx-auto w-full" action="action_page.php" method="post">
+			<form class="space-y-6 max-w-md md:ml-auto max-md:mx-auto w-full" th-action="@{/signin}" method="post">
 			  <h3 class="text-3xl font-extrabold mb-8 max-md:text-center">
 				Sign in
 			  </h3>
-			  <div>
-				<input name="email" type="email" autocomplete="email" required class="bg-gray-100 w-full text-sm px-4 py-3.5 rounded-md outline-orange-500" placeholder="Email address" />
-			  </div>
-			  <div>
-				<input name="password" type="password" autocomplete="current-password" required class="bg-gray-100 w-full text-sm px-4 py-3.5 rounded-md outline-orange-500" placeholder="Password" />
-			  </div>
+			  <div class="dark:bg-gray-800">
+				<input type="email" id="email" required class="bg-gray-100 dark:bg-gray-800 w-full text-sm px-4 py-3.5 rounded-md  outline-orange-500" placeholder="Email address" />
+			  </div><!--th:field="*{email}"-->
+			  <div class="dark:bg-gray-800">
+				<input type="password" id="password" autocomplete="current-password" required class="bg-gray-100 dark:bg-gray-800 w-full text-sm px-4 py-3.5 rounded-md outline-orange-500" placeholder="Password" />
+			  </div><!--th:field="*{password}"-->
 			  <div class="flex items-center justify-between">
 				<div class="flex items-center">
 				  <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 text-orange-500 focus:ring-orange-500 border-gray-300 rounded" />
