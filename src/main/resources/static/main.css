@@ -584,6 +584,10 @@ video {
   z-index: 20;
 }
 
+.m-4 {
+  margin: 1rem;
+}
+
 .mx-8 {
   margin-left: 2rem;
   margin-right: 2rem;
@@ -1417,6 +1421,11 @@ footer {
     line-height: 1;
   }
 
+  .md\:text-gray-900 {
+    --tw-text-opacity: 1;
+    color: rgb(17 24 39 / var(--tw-text-opacity));
+  }
+
   .md\:text-orange-600 {
     --tw-text-opacity: 1;
     color: rgb(234 88 12 / var(--tw-text-opacity));
@@ -1548,6 +1557,11 @@ footer {
     .md\:dark\:text-orange-500 {
       --tw-text-opacity: 1;
       color: rgb(249 115 22 / var(--tw-text-opacity));
+    }
+
+    .md\:dark\:text-white {
+      --tw-text-opacity: 1;
+      color: rgb(255 255 255 / var(--tw-text-opacity));
     }
 
     .md\:dark\:hover\:bg-transparent:hover {
