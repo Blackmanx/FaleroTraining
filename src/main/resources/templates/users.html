@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration and Login System</title>
+	<link rel="stylesheet" th:href="@{main.css}">
+</head>
+<body class="bg-gray-800 text-white">
+<nav class="bg-gray-900 p-4">
+    <div class="container mx-auto flex flex-wrap items-center justify-between">
+        <a class="text-xl font-semibold" th:href="@{/}">Registration and Login System</a>
+        <div class="flex md:order-2">
+            <a th:href="@{/logout}" class="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded">Logout</a>
+        </div>
+    </div>
+</nav>
+<div class="container mx-auto my-8">
+    <div class="mb-4">
+        <h2 class="text-2xl font-semibold">Lista de usuarios registrados</h2>
+    </div>
+    <table class="table-auto w-full">
+        <thead class="bg-gray-700">
+            <tr>
+				<th class="px-4 py-2">ID</th>
+                <th class="px-4 py-2">Nombre</th>
+                <th class="px-4 py-2">Last Name</th>
+                <th class="px-4 py-2">Email</th>
+                <th class="px-4 py-2">DNI</th>
+                <th class="px-4 py-2">Fecha Nacimiento</th>
+                <th class="px-4 py-2">Género</th>
+                <th class="px-4 py-2">Contraseña</th>
+            </tr>
+        </thead>
+        <tbody class="bg-gray-800">
+            <tr th:each="user : ${users}">
+				<td class="border px-4 py-2" th:text="${user.id}"></td>
+                <td class="border px-4 py-2" th:text="${user.firstName}"></td>
+                <td class="border px-4 py-2" th:text="${user.lastName}"></td>
+                <td class="border px-4 py-2" th:text="${user.email}"></td>
+                <td class="border px-4 py-2" th:text="${user.idCard}"></td>
+                <td class="border px-4 py-2" th:text="${user.dateOfBirth}"></td>
+                <td class="border px-4 py-2" th:text="${user.gender}"></td>
+                <td class="border px-4 py-2" th:text="${user.password}"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<footer class="bg-gray-900 p-4">
+    <div class="container mx-auto text-center">
+        <span class="text-sm text-gray-500 dark:text-gray-400">© 2024 <a href="https://clinicafalero.com/" class="hover:underline">Clinica Falero</a></span>
+    </div>
+</footer>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		const getCellValue = (tr, idx) => tr.children[idx].innerText || tr.children[idx].textContent;
+		const comparer = (idx, asc) => (a, b) => ((v1, v2) =>
+			v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v1 - v2 : v1.toString().localeCompare(v2)
+			)(getCellValue(asc ? a : b, idx), getCellValue(asc ? b : a, idx));
+
+		// Do the work...
+		document.querySelectorAll('th').forEach(th => th.addEventListener('click', (() => {
+			const table = th.closest('table');
+			const tbody = table.querySelector('tbody');
+			Array.from(tbody.querySelectorAll('tr'))
+				.sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc))
+				.forEach(tr => tbody.appendChild(tr) );
+		})));
+	});
+</script>
+</body>
+</html>

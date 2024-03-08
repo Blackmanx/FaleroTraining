@@ -25,29 +25,29 @@ public class MainController {
         this.userService = userService;
     }
 
-    @RequestMapping("/")
+    @GetMapping("/")
     public String index(){
-        return "index.html";
+        return "index";
     }
 
-    @RequestMapping("/login")
+    @GetMapping("/login")
     public String login(){
         return "login";
     }
 
-    @RequestMapping("/contact")
+    @GetMapping("/contact")
     public String contact(){
-        return "contact.html";
+        return "contact";
     }
 
-    @RequestMapping("/services")
+    @GetMapping("/services")
     public String services(){
-        return "services.html";
+        return "services";
     }
 
-    @RequestMapping("/pricing")
+    @GetMapping("/pricing")
     public String pricing(){
-        return "pricing.html";
+        return "pricing";
     }
 
     @GetMapping("/register")
@@ -81,6 +81,13 @@ public class MainController {
     // handler method to handle list of users
     @GetMapping("/users")
     public String users(Model model){
+        List<UserDto> users = userService.findAllUsers();
+        model.addAttribute("users", users);
+        return "users";
+    }
+
+    @GetMapping("/logout")
+    public String logout(Model model){
         List<UserDto> users = userService.findAllUsers();
         model.addAttribute("users", users);
         return "users";
