@@ -7,6 +7,7 @@ import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -36,7 +37,7 @@ public class UserDto
 	@NotEmpty
 	private String idCard;
 
-	@NotEmpty
+	@NotNull
 	@Temporal(TemporalType.DATE)
 	private Date dateOfBirth;
 }

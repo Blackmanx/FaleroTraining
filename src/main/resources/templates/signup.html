@@ -2,10 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Registro de Usuario</title>
-    <link href="main.css" rel="stylesheet" />
+    <link th:href="@{main.css}" rel="stylesheet" />
 </head>
 <body class="m-4">
-    <form th:action="@{/tu-endpoint}" th:object="${user}" method="post" class="space-y-4">
+    <form th:action="@{/register/save}"
+    th:object="${user}" method="post" class="space-y-4">
         <div>
             <label for="firstName" class="block">Nombre</label>
             <input type="text" id="firstName" th:field="*{firstName}" class="w-full px-4 py-2 border rounded-md" required>
