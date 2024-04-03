@@ -2,7 +2,6 @@ package com.blackmanx.falerotraining.dto;
 
 import java.sql.Date;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import jakarta.validation.constraints.Email;
